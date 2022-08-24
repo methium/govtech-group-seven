@@ -1,10 +1,10 @@
 const express = require('express')
 const redis = require('redis')
 const app = express()
-const port = 3000
+const port = 3001
 
 const client = redis.createClient({
-  url: 'redis://YOUR REDIS INSTANCE URL'
+  url: 'redis://127.0.0.1:6379',
 })
 await client.connect()
 
