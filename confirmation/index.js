@@ -3,27 +3,28 @@ const { urlencoded, json } = require('body-parser');
 
 const app = express()
 
-const port = 3003
+const port = 3004
 
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
 app.get('/confirmation', (req, res) => {
-  const reqMessage = req.body && req.body.message
+  const reqMessage = (req.body && req.body.message) || ''
 
   let next
   let nextMessage
-  switch(reqMessage) {
+
+  switch(reqMessage.toLowerCase()) {
     case 'yes': {
-      next = '/item'
+      next = '/localhost:3001/item'
       nextMessage = 'What is the next item?'
     }
     case 'no': {
-      next = '/result'
+      next = '/localhost:3005/result'
       nextMessage = null
     }
     default: {
-      next = '/confirmation'
+      next = '/localhost:3004/confirmation'
       nextMessage = 'Are there more items?'
     }
   }
