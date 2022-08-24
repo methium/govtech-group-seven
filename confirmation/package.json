@@ -1,0 +1,12 @@
+{
+  "name": "confirmation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/node": "^7.18.10",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
+}
